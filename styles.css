@@ -7,20 +7,22 @@
 
 body {
     color: #ededed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Added min-height to ensure footer stays at the bottom */
 }
 
 .header {
-    position: absolute;
+    position: sticky;
     top: 0;
     width: 100%;
     left: 0;
     padding: 20px 10%;
-    background: transparent;
+    background: #081b29;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
 }
 
 .logo {
@@ -29,8 +31,15 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
-.logo:hover{
+
+.logo:hover {
     color: #ff0000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -38,7 +47,7 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin: 10px;
     transition: .3s;
 }
 
@@ -53,11 +62,13 @@ body {
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
     padding: 0 10%;
     background: url('home.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    text-align: center;
 }
 
 .aa {
@@ -74,27 +85,36 @@ body {
 
 .home-content h1 {
     font-size: 56px;
-    font-weight: 70;
-
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .home-content p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 20px 0 40px;
+}
+
+.home-content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 40px 0 20px;
+}
+
+.home-content p li {
+    margin-bottom: 10px;
 }
 
 .home-content .btn-box {
     display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .btn-box a {
     position: relative;
     display: inline-flex;
     width: 150px;
-    height: 100%;
+    height: 50px;
     justify-content: center;
     align-items: center;
     background: #00abf0;
@@ -108,6 +128,7 @@ body {
     z-index: 1;
     overflow: hidden;
     transition: .5s;
+    margin: 10px;
 }
 
 .btn-box a:hover {
@@ -144,11 +165,7 @@ body {
 }
 
 .home-sci {
-    position: absolute;
-    bottom: 40px;
-    width: 170px;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .home-sci a {
@@ -166,6 +183,7 @@ body {
     text-decoration: none;
     z-index: 1;
     overflow: hidden;
+    margin-right: 10px;
 }
 
 .home-sci a:hover {
@@ -204,18 +222,76 @@ body {
     animation: showdown 1s ease-out;
 }
 
-.copyright {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-    color: #ededed;
+footer {
     background: #081b29;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Added to push the footer to the bottom */
 }
-footer{
-   background: #081b29;
-   text-align: center; 
-}
-footer a{
+
+footer a {
     color: #00abf0;
     font-size: 40px;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #ededed;
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        position: sticky;
+        background: #081b29;
+    }
+
+    .navbar {
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    .navbar a {
+        margin: 0 10px;
+    }
+
+    .home {
+        height: 100vh;
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+
+    .home-content {
+        margin-top: 0;
+    }
+
+    .home-content h1 {
+        font-size: 56px;
+    }
+
+    .home-content h2 {
+        font-size: 32px;
+    }
+
+    .home-content p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .home-content {
+        max-width: 800px;
+    }
+
+    .home-content h1 {
+        font-size: 72px;
+    }
+
+    .home-content h2 {
+        font-size: 40px;
+    }
+
+    .home-content p {
+        font-size: 20px;
+    }
 }
