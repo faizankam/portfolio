@@ -1,11 +1,12 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     color: #ededed;
 }
 
@@ -20,7 +21,6 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
 }
 
 .logo {
@@ -29,7 +29,7 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
-.logo:hover{
+.logo:hover {
     color: #ff0000;
 }
 
@@ -53,11 +53,14 @@ body {
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensure at least 100% of the viewport height for home 
+
+section */
     padding: 0 10%;
     background: url('home.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    margin-bottom: 0; /* Remove default margin-bottom */
 }
 
 .aa {
@@ -73,8 +76,7 @@ body {
 
 .home-content h1 {
     font-size: 56px;
-    font-weight: 70;
-
+    font-weight: 700; /* Adjusted font-weight to ensure better readability */
 }
 
 .home-content p {
@@ -89,7 +91,7 @@ body {
     height: 50px;
 }
 
-.btn-box a {
+.home-content .btn-box a {
     position: relative;
     display: inline-flex;
     width: 150px;
@@ -109,24 +111,24 @@ body {
     transition: .5s;
 }
 
-.btn-box a:hover {
+.home-content .btn-box a:hover {
     color: #00abf0;
 }
 
-.btn-box a:nth-child(2) {
+.home-content .btn-box a:nth-child(2) {
     background: transparent;
     color: #00abf0;
 }
 
-.btn-box a:nth-child(2):hover {
+.home-content .btn-box a:nth-child(2):hover {
     color: #081b29;
 }
 
-.btn-box a:nth-child(2)::before {
+.home-content .btn-box a:nth-child(2)::before {
     background: #00abf0;
 }
 
-.btn-box a::before {
+.home-content .btn-box a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -138,7 +140,7 @@ body {
     transition: .5s;
 }
 
-.btn-box a:hover::before {
+.home-content .btn-box a:hover::before {
     width: 100%;
 }
 
@@ -192,7 +194,6 @@ body {
         transform: scale(1.1);
         opacity: 0;
     }
-
     100% {
         transform: scale(1);
         opacity: 1;
@@ -203,14 +204,51 @@ body {
     animation: showdown 1s ease-out;
 }
 
-.copyright {
+.footer {
     text-align: center;
     font-size: 14px;
-    margin-top: 10px;
+    padding: 10px 0; /* Add some padding to the footer to create space below the 
+
+content */
     color: #ededed;
     background: #081b29;
 }
-footer{
-   background: #081b29;
-   text-align: center; 
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .home-content .btn-box a {
+        font-size: 16px;
+    }
+
+    .home-sci {
+        width: 120px;
+        bottom: 30px;
+    }
+
+    .home {
+        padding-bottom: 50px; /* Add padding to create space between home and 
+
+footer on mobile */
+    }
 }
