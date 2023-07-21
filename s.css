@@ -195,16 +195,48 @@ body {
     width: 100%;
 }
 
+/* ... Existing CSS styles ... */
+
+/* Certificate section styles */
+/* ... Existing CSS styles ... */
+
 /* Certificate section styles */
 .my {
     margin-top: 100px;
+    text-align: center; /* To center the certificate image */
 }
 
-.my a {
+.my .certificate-container {
+    position: relative; /* To make the positioning of the "Verify" link relative to this container */
+}
+
+.my img {
+    max-width: 100%; /* To ensure the image doesn't exceed its container */
+    height: auto; /* To maintain the aspect ratio */
+}
+
+/* Position the "Verify" link at the bottom of the container */
+.verify-link {
+    position: absolute;
+    top: 100%; /* Adjust this value to move the "Verify" link below the certificate image */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px; /* Add some spacing between the certificate and the "Verify" link */
+}
+
+.verify-link a {
     color: #ff0000;
     text-decoration: none;
     font-size: 20px;
 }
+.verify-link a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+
 
 /* Footer styles */
 footer {
@@ -254,6 +286,16 @@ footer a {
     .btn-box a {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    /* Adjust the position of the "Verify" link for mobile screens */
+    .my {
+        margin-top: 20px;
+    }
+    .verify-link {
+        bottom: 0;
+        transform: none;
+ margin-top: 5px;
     }
 }
 
