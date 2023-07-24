@@ -221,7 +221,7 @@ body {
     top: 100%; /* Adjust this value to move the "Verify" link below the certificate image */
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 20px; /* Add some spacing between the certificate and the "Verify" link */
+    margin-top: 10px; /* Add some spacing between the certificate and the "Verify" link */
 }
 
 .verify-link a {
