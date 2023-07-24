@@ -70,7 +70,7 @@ body {
 .home {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
     padding: 0 10%;
     background: url('home.jpg') no-repeat;
     background-size: cover;
